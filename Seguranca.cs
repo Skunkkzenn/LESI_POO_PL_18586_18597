@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace Safari_Management
 {
-    internal class Seguranca
+    class Seguranca
     {
     }
 }
