@@ -8,6 +8,7 @@ class Master {
     static void Main(string[] args)
     {
 
+        List<Animals> animals = new List<Animals>();
     }
 }
 
