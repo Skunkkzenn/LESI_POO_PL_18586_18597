@@ -1,17 +1,18 @@
-﻿using Safari_Management;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using Safari_Management;
 using System.Globalization;
-
-
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Safari_Management
 {
-
+    [Serializable] // Marcar a classe como serializável
     class Animals
     {
         public int Id { get; set; }
-        public int Weight { get; set; }
+        public double Weight { get; set; }
         public double Height { get; set; }
         public string Specie { get; set; }
         public string Name { get; set; }
@@ -20,7 +21,7 @@ namespace Safari_Management
        
         public Animals() { }
 
-        public Animals(int id, int weight, double height, string specie, string name, string location, DateTime dateofbirth)
+        public Animals(int id, double weight, double height, string specie, string name, string location, DateTime dateofbirth)
         {
             Id = id;
             Weight = weight;
@@ -46,7 +47,7 @@ namespace Safari_Management
                 else
                 {
                     Console.Write("Weight: ");
-                    int weight = int.Parse(Console.ReadLine());
+                    double weight = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                     Console.Write("Height: ");
                     double height = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                     Console.Write("Specie: ");
@@ -61,7 +62,7 @@ namespace Safari_Management
 
                     while(!validDate)
                     {
-                        Console.WriteLine("Date of Birth (dd/MM/yyyy): ");
+                        Console.Write("Date of Birth (dd/MM/yyyy): ");
                         if(DateTime.TryParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateofbirth))
                         {
                             validDate = true;
@@ -84,7 +85,46 @@ namespace Safari_Management
 
         }
 
-    }
+        public void SaveAnimalsToFile(List<Animals> animalsList, string fileName)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(fileName, FileMode.Create))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    formatter.Serialize(fs, animalsList);
+                }
 
-    
+                Console.WriteLine($"Dados dos animais salvos em {fileName} com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ocorreu um erro ao salvar os dados dos animais: {ex.Message}");
+            }
+        }
+
+        public byte[] ReadBinaryFile(string filePath)
+        {
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    return File.ReadAllBytes(filePath);
+                }
+                else
+                {
+                    Console.WriteLine("This file not exist.");
+                    return null; // Retorna null se o arquivo não existir
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"A error ocurred for read the file: {ex.Message}");
+                return null; // Retorna null em caso de erro
+            }
+        }
+
+    }
 }
+
+
