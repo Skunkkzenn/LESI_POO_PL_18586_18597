@@ -11,33 +11,33 @@ namespace Safari_Management
 
             Animals animalManager = new Animals(); // Cria uma instância da classe Animals
 
-            Console.WriteLine("Bem-vindo ao sistema de registro de animais!");
+            Console.WriteLine("Welcome to the animal registration system!");
 
             while (true)
             {
-                Console.WriteLine("1. Registrar um novo animal");
-                Console.WriteLine("2. Sair");
-                Console.Write("Escolha uma opção: ");
+                Console.WriteLine("1. Regiter a new animal");
+                Console.WriteLine("2. Exit");
 
+                Console.Write("Escolha uma opção: ");
                 int choice = int.Parse(Console.ReadLine());
 
                 if (choice == 1)
                 {
                     int numOfReg = 0;
-                    Console.Write("Quantos animais você deseja registrar? ");
+                    Console.Write("How many animals do you want to register? ");
                    
                     int registeredCount = animalManager.registerAnimal(numOfReg, animalsList);
 
-                    Console.WriteLine($"Total de animais registrados: {registeredCount}");
+                    Console.WriteLine($"Total registered animals: {registeredCount}");
                 }
                 else if (choice == 2)
                 {
-                    Console.WriteLine("Saindo do programa.");
+                    Console.WriteLine("Leaving the program.");
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("Opção inválida. Por favor, escolha uma opção válida.");
+                    Console.WriteLine("Invalid option. Please choose a valid option.");
                 }
             }
         }
