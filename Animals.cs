@@ -103,27 +103,32 @@ namespace Safari_Management
             }
         }
 
-        public byte[] ReadBinaryFile(string filePath)
+        public List<Animals> ReadAnimalsFromFile(string fileName)
         {
             try
             {
-                if (File.Exists(filePath))
+                using (FileStream fs = new FileStream(fileName, FileMode.Open))
                 {
-                    return File.ReadAllBytes(filePath);
-                }
-                else
-                {
-                    Console.WriteLine("This file not exist.");
-                    return null; // Retorna null se o arquivo não existir
+                    IFormatter formatter = new BinaryFormatter();
+                    List<Animals> animalsList = formatter.Deserialize(fs) as List<Animals>;
+
+                    if (animalsList != null && animalsList.Count > 0)
+                    {
+                        return animalsList;
+                    }
+                    else
+                    {
+                        Console.WriteLine("A lista de animais está vazia ou os dados não puderam ser lidos.");
+                        return null;
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"A error ocurred for read the file: {ex.Message}");
-                return null; // Retorna null em caso de erro
+                Console.WriteLine($"Ocorreu um erro ao ler os dados dos animais: {ex.Message}");
+                return null;
             }
         }
-
     }
 }
 
