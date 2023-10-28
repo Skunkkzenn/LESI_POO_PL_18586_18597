@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\victo\\OneDrive\\Ambiente de Trabalho\\TP_POO_2023_MANAGEMENT_SAFARI\\Safari_Management.csproj": {}
+    "C:\\Users\\Destefani\\Source\\Repos\\LESI_POO_PL_18586_18597\\Safari_Management.csproj": {}
   },
   "projects": {
-    "C:\\Users\\victo\\OneDrive\\Ambiente de Trabalho\\TP_POO_2023_MANAGEMENT_SAFARI\\Safari_Management.csproj": {
+    "C:\\Users\\Destefani\\Source\\Repos\\LESI_POO_PL_18586_18597\\Safari_Management.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\victo\\OneDrive\\Ambiente de Trabalho\\TP_POO_2023_MANAGEMENT_SAFARI\\Safari_Management.csproj",
+        "projectUniqueName": "C:\\Users\\Destefani\\Source\\Repos\\LESI_POO_PL_18586_18597\\Safari_Management.csproj",
         "projectName": "Safari_Management",
-        "projectPath": "C:\\Users\\victo\\OneDrive\\Ambiente de Trabalho\\TP_POO_2023_MANAGEMENT_SAFARI\\Safari_Management.csproj",
-        "packagesPath": "C:\\Users\\victo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\victo\\OneDrive\\Ambiente de Trabalho\\TP_POO_2023_MANAGEMENT_SAFARI\\obj\\",
+        "projectPath": "C:\\Users\\Destefani\\Source\\Repos\\LESI_POO_PL_18586_18597\\Safari_Management.csproj",
+        "packagesPath": "C:\\Users\\Destefani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Destefani\\Source\\Repos\\LESI_POO_PL_18586_18597\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Destefani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

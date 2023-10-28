@@ -15,15 +15,19 @@ namespace Safari_Management
         public double Height { get; set; }
         public string Specie { get; set; }
         public string Name { get; set; }
+        public string Location { get; set; }
         public DateTime DateOfBirth { get; set; }
        
-        public Animals(int id, int weight, double height, string specie, string name, DateTime dateofbirth)
+        public Animals() { }
+
+        public Animals(int id, int weight, double height, string specie, string name, string location, DateTime dateofbirth)
         {
             Id = id;
             Weight = weight;
             Height = height;
             Specie = specie;
             Name = name;
+            Location = location;
             DateOfBirth = dateofbirth;
         }
         
@@ -41,12 +45,17 @@ namespace Safari_Management
                 }
                 else
                 {
-                    Console.WriteLine("Weight: ");
+                    Console.Write("Weight: ");
                     int weight = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Height: ");
-                    double height = double.Parse(Console.ReadLine());
+                    Console.Write("Height: ");
+                    double height = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    Console.Write("Specie: ");
                     string specie = Console.ReadLine();
+                    Console.Write("Name: ");
                     string name = Console.ReadLine();
+                    Console.Write("Location: ");
+                    string location = Console.ReadLine();
+                    Console.Write("Date of birth: ");
                     DateTime dateofbirth = new DateTime();
                     bool validDate = false;
 
@@ -63,7 +72,7 @@ namespace Safari_Management
                     }
 
                     // Cria uma nova instância da classe `Animals` com todos os dados do novo animal
-                    Animals animal = new Animals(animalId, weight, height, specie, name, dateofbirth);
+                    Animals animal = new Animals(animalId, weight, height, specie, name, location, dateofbirth);
 
                     // Adiciona o novo animal à lista
                     animalsList.Add(animal);
