@@ -129,20 +129,6 @@ namespace Safari_Management
                 return null;
             }
         }
-
-        public List<Animals> LoadAnimalsFromFile(string fileName)
-        {
-            if (File.Exists(fileName))
-            {
-                return ReadAnimalsFromFile(fileName);
-            }
-            else
-            {
-                Console.WriteLine("O arquivo não existe. Iniciando com uma lista vazia.");
-                return new List<Animals>();
-            }
-        }
-
     }
 }
 
