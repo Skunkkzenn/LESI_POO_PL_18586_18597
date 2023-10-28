@@ -20,13 +20,31 @@ namespace Safari_Management
             //Inicia o programa
             while (true)
             {
+                Console.WriteLine("0. Load database animal");
                 Console.WriteLine("1. Regiter a new animal");
                 Console.WriteLine("2. Exit");
 
                 Console.Write("Select one option: ");
                 int choice = int.Parse(Console.ReadLine());
 
-                if (choice == 1)
+                if (choice == 0)
+                {
+                    animalsList = animalManager.ReadAnimalsFromFile("AnimalList.bin"); // Atualize a lista com os dados lidos do arquivo
+
+                    if (animalsList != null)
+                    {
+                        foreach (Animals animal in animalsList)
+                        {
+                            Console.WriteLine($"Id: {animal.Id}, Weight: {animal.Weight}, Height: {animal.Height}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("A lista de animais está vazia ou os dados não puderam ser lidos.");
+                    }
+                }
+
+                else if (choice == 1)
                 {
                     int numOfReg = 0;
                     Console.Write("How many animals do you want to register? ");
@@ -37,9 +55,13 @@ namespace Safari_Management
                     Console.WriteLine($"Total registered animals: {registeredCount}");
 
                     animalManager.SaveAnimalsToFile(animalsList, "AnimalList.bin");
-                    
-                    string filePath = "bin/Debug/net6.0/AnimalList.bin"; // Substitua com o caminho do seu arquivo binário
-                    animalManager.ReadBinaryFile(filePath);
+
+                    animalManager.ReadAnimalsFromFile("AnimalList.bin");
+
+                    foreach (Animals animal in animalsList)
+                    {
+                        Console.WriteLine($"Id: {animal.Id}, Weight: {animal.Weight}, Height: {animal.Height}");
+                    }
                 }
 
                 else if (choice == 2)
