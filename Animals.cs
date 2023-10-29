@@ -123,6 +123,7 @@ namespace Safari_Management
                     }
                 }
             }
+            //Usado para capturar qualquer erro inesperado que possa ocorrer ao tentar ler o arquivo e desserializar os dados.
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred while reading animal data:  {ex.Message}");
