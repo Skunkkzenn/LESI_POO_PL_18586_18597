@@ -95,11 +95,11 @@ namespace Safari_Management
                     formatter.Serialize(fs, animalsList);
                 }
 
-                Console.WriteLine($"Dados dos animais salvos em {fileName} com sucesso.");
+                Console.WriteLine($"Animal data saved in {fileName} successfully.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ocorreu um erro ao salvar os dados dos animais: {ex.Message}");
+                Console.WriteLine($"An error occurred while saving animal data: {ex.Message}");
             }
         }
 
@@ -118,16 +118,22 @@ namespace Safari_Management
                     }
                     else
                     {
-                        Console.WriteLine("A lista de animais está vazia ou os dados não puderam ser lidos.");
+                        Console.WriteLine("The animal list is empty or the data could not be read.");
                         return null;
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ocorreu um erro ao ler os dados dos animais: {ex.Message}");
+                Console.WriteLine($"An error occurred while reading animal data:  {ex.Message}");
                 return null;
             }
+        }
+
+        public override string ToString()
+        {
+            return $"Id: {Id}, Weight: {Weight.ToString("F2", CultureInfo.InvariantCulture)}, Height: {Height.ToString("F2", CultureInfo.InvariantCulture)}, Specie: {Specie}, Name: {Name}, Location: {Location}, DateOfBirth: {DateOfBirth}";
+
         }
     }
 }

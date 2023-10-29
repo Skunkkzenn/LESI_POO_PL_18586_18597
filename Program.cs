@@ -20,11 +20,12 @@ namespace Safari_Management
             //Inicia o programa
             while (true)
             {
+                Console.Write("Select one option: ");
+                Console.WriteLine();
                 Console.WriteLine("0. Load database animal");
                 Console.WriteLine("1. Regiter a new animal");
                 Console.WriteLine("2. Exit");
-
-                Console.Write("Select one option: ");
+                Console.WriteLine();
                 int choice = int.Parse(Console.ReadLine());
 
                 if (choice == 0)
@@ -35,12 +36,12 @@ namespace Safari_Management
                     {
                         foreach (Animals animal in animalsList)
                         {
-                            Console.WriteLine($"Id: {animal.Id}, Weight: {animal.Weight}, Height: {animal.Height}");
+                            Console.WriteLine(animal);
                         }
                     }
                     else
                     {
-                        Console.WriteLine("A lista de animais está vazia ou os dados não puderam ser lidos.");
+                        Console.WriteLine("The animal list is empty or the data could not be read.");
                     }
                 }
 
@@ -58,10 +59,10 @@ namespace Safari_Management
 
                     animalManager.ReadAnimalsFromFile("AnimalList.bin");
 
-                    foreach (Animals animal in animalsList)
+                    /* foreach (Animals animal in animalsList)
                     {
                         Console.WriteLine($"Id: {animal.Id}, Weight: {animal.Weight}, Height: {animal.Height}");
-                    }
+                    }  */
                 }
 
                 else if (choice == 2)
