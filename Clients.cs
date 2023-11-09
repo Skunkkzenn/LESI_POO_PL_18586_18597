@@ -10,9 +10,9 @@ namespace Safari_Management
 {
 
     [Serializable]
-    class Clientes {
+    class Clients { //Classe para definir os Clientes
         
-
+        //Propriedades dos Clientes
         public int ID { get; set; }
         public string Name { get; set; }
         public DateTime DateofBirth { get; set; }
@@ -21,11 +21,12 @@ namespace Safari_Management
         public int NIF { get; set; }
         public string Location { get; set; }
 
-        public Clientes() { }
+        public Clients() { }
 
-
-        public Clientes(int id, string name, DateTime dateofbirth, int contact, string email, int nif, string location)
+        //Construtor para criar o objeto 'Clients' com valores iniciais
+        public Clients(int id, string name, DateTime dateofbirth, int contact, string email, int nif, string location)
         {
+            //Inicializa as propriedades com os valores fornecidos
             ID = id;
             Name = name;
             DateofBirth = dateofbirth;
@@ -35,7 +36,8 @@ namespace Safari_Management
             Location = location;
         }
 
-        public int RegisterClient(int numOfreg, List <Clientes> clientesList)
+        //Método que regista os clientes
+        public int RegisterClient(int numOfreg, List <Clients> clientsList)
         {
             numOfreg = int.Parse(Console.ReadLine());
 
@@ -44,7 +46,7 @@ namespace Safari_Management
                 Console.Write("ID: ");
                 int id = int.Parse(Console.ReadLine());
 
-                if (clientesList.Any(cliente => cliente.ID == id))
+                if (clientesList.Any(client => client.ID == id))
                 {
                     Console.WriteLine("Client ID already exists.");
                 }
@@ -97,10 +99,10 @@ namespace Safari_Management
                         }
                     }
 
-                    Clientes cliente = new Clientes(id, name, contact, email, nif, dateofbirth);
+                    Clients client = new Clients(id, name, contact, email, nif, dateofbirth);
 
           
-                    clientesList.Add(cliente);
+                    clientesList.Add(client);
 
                 }
             }
@@ -109,14 +111,15 @@ namespace Safari_Management
 
         }
 
-        public void SaveClientesToFile(List<Clientes> clientesList, string fileName)
+        //Método que salva os dados dos clientes em um ficheiro binário
+        public void SaveClientsToFile(List<Clients> clientsList, string fileName)
         {
             try
             {
                 using (FileStream fs = new FileStream(fileName, FileMode.Create))
                 {
                     IFormatter formatter = new BinaryFormatter();
-                    formatter.Serialize(fs, clientesList);
+                    formatter.Serialize(fs, clientsList);
                 }
 
                 Console.WriteLine($"Client data saved in {fileName} successfully.");
@@ -127,18 +130,19 @@ namespace Safari_Management
             }
         }
 
-        public List<Clientes> ReadClientesFromFile(string fileName)
+        //Método que lê os dados dos clientes do ficheiro binário
+        public List<Clients> ReadClientsFromFile(string fileName)
         {
             try
             {
                 using (FileStream fs = new FileStream(fileName, FileMode.Open))
                 {
                     IFormatter formatter = new BinaryFormatter();
-                    List<Clientes> clientesList = formatter.Deserialize(fs) as List<Clientes>;
+                    List<Clients> clientsList = formatter.Deserialize(fs) as List<Clients>;
 
-                    if (clientesList != null && clientesList.Count > 0)
+                    if (clientsList != null && clientsList.Count > 0)
                     {
-                        return clientesList;
+                        return clientsList;
                     }
                     else
                     {
@@ -155,6 +159,7 @@ namespace Safari_Management
             }
         }
 
+        //Método para exibir as informações dos clientes
         public override string ToString()
         {
             return $"ID: {ID}, Name: {Name}, DateOfBirth: {DateofBirth}, Contact: {Contact}, Email: {Email}, NIF:{NIF} ,Location: {Location}";
@@ -162,5 +167,5 @@ namespace Safari_Management
         }
 
     }
-        
+    
 }
