@@ -9,8 +9,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 namespace Safari_Management
 {
     [Serializable] // Marcar a classe como serializável
-    class Animals
+    class Animals //Classe para definir os animais
     {
+
+        //Propriedades dos Clientes
         public int Id { get; set; }
         public double Weight { get; set; }
         public double Height { get; set; }
@@ -21,8 +23,10 @@ namespace Safari_Management
        
         public Animals() { }
 
+        //Construtor para criar o objeto 'Animals' com valores iniciais
         public Animals(int id, double weight, double height, string specie, string name, string location, DateTime dateofbirth)
         {
+            //Inicializa as propriedades com os valores fornecidos
             Id = id;
             Weight = weight;
             Height = height;
@@ -31,7 +35,8 @@ namespace Safari_Management
             Location = location;
             DateOfBirth = dateofbirth;
         }
-        
+
+        //Método que regista os animais
         public int registerAnimal(int numOfreg, List<Animals> animalsList)
         {
             numOfreg = int.Parse(Console.ReadLine());
@@ -85,6 +90,7 @@ namespace Safari_Management
 
         }
 
+        //Método que salva os dados dos animais em um ficheiro binário
         public void SaveAnimalsToFile(List<Animals> animalsList, string fileName)
         {
             try
@@ -103,6 +109,7 @@ namespace Safari_Management
             }
         }
 
+        //Método que lê os dados dos animais do ficheiro binário
         public List<Animals> ReadAnimalsFromFile(string fileName)
         {
             try
@@ -131,6 +138,7 @@ namespace Safari_Management
             }
         }
 
+        //Método para exibir as informações dos animais
         public override string ToString()
         {
             return $"Id: {Id}, Weight: {Weight.ToString("F2", CultureInfo.InvariantCulture)}, Height: {Height.ToString("F2", CultureInfo.InvariantCulture)}, Specie: {Specie}, Name: {Name}, Location: {Location}, DateOfBirth: {DateOfBirth}";
