@@ -1,19 +1,19 @@
-﻿using System;
+﻿/* using System;
 using System.Collections.Generic;
 using System.IO;
-using Safari_Management;
 using System.Globalization;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Safari_Management
+namespace Safari_Management.Entities
 {
 
     [Serializable]
-    class Clients { //Classe para definir os Clientes
-        
+    class Clients
+    { //Classe para definir os Clientes
+
         //Propriedades dos Clientes
-        public int ID { get; set; }
+        public int IdCli { get; set; }
         public string Name { get; set; }
         public DateTime DateofBirth { get; set; }
         public int Contact { get; set; }
@@ -27,7 +27,7 @@ namespace Safari_Management
         public Clients(int id, string name, DateTime dateofbirth, int contact, string email, int nif, string location)
         {
             //Inicializa as propriedades com os valores fornecidos
-            ID = id;
+            IdCli = id;
             Name = name;
             DateofBirth = dateofbirth;
             Contact = contact;
@@ -37,7 +37,7 @@ namespace Safari_Management
         }
 
         //Método que regista os clientes
-        public int RegisterClient(int numOfreg, List <Clients> clientsList)
+        public int RegisterClient(int numOfreg, List<Clients> clientsList)
         {
             numOfreg = int.Parse(Console.ReadLine());
 
@@ -71,11 +71,11 @@ namespace Safari_Management
                     string email = Console.ReadLine();
 
                     Console.Write("NIF: ");
-                    string nifStr = Console.ReadLine(); 
-                    int nif = 0; 
+                    string nifStr = Console.ReadLine();
+                    int nif = 0;
                     if (int.TryParse(nifStr, out nif))
                     {
-                     
+
                     }
                     else
                     {
@@ -101,7 +101,7 @@ namespace Safari_Management
 
                     Clients client = new Clients(id, name, contact, email, nif, dateofbirth);
 
-          
+
                     clientesList.Add(client);
 
                 }
@@ -151,7 +151,7 @@ namespace Safari_Management
                     }
                 }
             }
-            
+
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred while reading Client data:  {ex.Message}");
@@ -167,5 +167,6 @@ namespace Safari_Management
         }
 
     }
-    
+
 }
+*/
