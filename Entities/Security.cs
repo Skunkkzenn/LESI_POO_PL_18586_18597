@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Safari_Management.Entities
 {
+    [Serializable] // Marcar a classe como serializável
     class Security //Classe para definir o Segurança
     {
 
@@ -15,23 +16,21 @@ namespace Safari_Management.Entities
         public string Name { get; set; }
         public DateTime DateofBirth { get; set; }
         public string Equipment { get; set; }
-        public string Section { get; set; }
-        public string Processes { get; set; }
-        public string EmergencyNumbers { get; set; }
+        public Section Section { get; set; }
+        public int EmergencyNumber { get; set; }
 
         public Security() { }
 
         //Construtor para criar o objeto 'Security' com valores iniciais
-        public Security(int sid, string name, DateTime dateofbirth, string equipment, string section, string processes, string emergencynumbers)
+        public Security(int sid, string name, DateTime dateOfBirth, string equipment, Section section, int emergencyNumbers)
         {
             //Inicializa as propriedades com os valores fornecidos
             SId = sid;
             Name = name;
-            DateofBirth = dateofbirth;
+            DateofBirth = dateOfBirth;
             Equipment = equipment;
             Section = section;
-            Processes = processes;
-            EmergencyNumbers = emergencynumbers;
+            EmergencyNumber = emergencyNumbers;
 
         }
 
