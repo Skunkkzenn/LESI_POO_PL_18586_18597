@@ -33,3 +33,17 @@ C:\Users\pedro\source\repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Mana
 C:\Users\pedro\source\repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.dll
 C:\Users\pedro\source\repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\refint\Safari_Management.dll
 C:\Users\pedro\source\repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.pdb
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.AssemblyInfoInputs.cache
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.AssemblyInfo.cs
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.csproj.CoreCompileInputs.cache
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.dll
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\refint\Safari_Management.dll
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.pdb
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\bin\Debug\net6.0\Safari_Management.exe
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\bin\Debug\net6.0\Safari_Management.deps.json
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\bin\Debug\net6.0\Safari_Management.runtimeconfig.json
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\bin\Debug\net6.0\Safari_Management.dll
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\bin\Debug\net6.0\Safari_Management.pdb
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.genruntimeconfig.cache
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\ref\Safari_Management.dll

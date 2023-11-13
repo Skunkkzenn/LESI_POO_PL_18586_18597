@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\pedro\\.nuget\\packages\\": {}
+    "C:\\Users\\Programacao PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pedro\\source\\repos\\LESI_POO_PL_18586_18597\\Safari_Management.csproj",
+      "projectUniqueName": "C:\\Users\\Programacao PC\\Source\\Repos\\LESI_POO_PL_18586_18597\\Safari_Management.csproj",
       "projectName": "Safari_Management",
-      "projectPath": "C:\\Users\\pedro\\source\\repos\\LESI_POO_PL_18586_18597\\Safari_Management.csproj",
-      "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pedro\\source\\repos\\LESI_POO_PL_18586_18597\\obj\\",
+      "projectPath": "C:\\Users\\Programacao PC\\Source\\Repos\\LESI_POO_PL_18586_18597\\Safari_Management.csproj",
+      "packagesPath": "C:\\Users\\Programacao PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Programacao PC\\Source\\Repos\\LESI_POO_PL_18586_18597\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Programacao PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

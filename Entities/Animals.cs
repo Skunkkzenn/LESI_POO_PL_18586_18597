@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Safari_Management;
 using System.Globalization;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Safari_Management
+namespace Safari_Management.Entities
 {
     [Serializable] // Marcar a classe como serializável
     class Animals //Classe para definir os animais
@@ -18,13 +17,14 @@ namespace Safari_Management
         public double Height { get; set; }
         public string Specie { get; set; }
         public string Name { get; set; }
-        public string Location { get; set; }
+        public Location Location { get; set; }
+        public string Genre { get; set; }
         public DateTime DateOfBirth { get; set; }
-       
+
         public Animals() { }
 
         //Construtor para criar o objeto 'Animals' com valores iniciais
-        public Animals(int id, double weight, double height, string specie, string name, string location, DateTime dateofbirth)
+        public Animals(int id, double weight, double height, string specie, string name, Location location, string genre, DateTime dateofbirth)
         {
             //Inicializa as propriedades com os valores fornecidos
             Id = id;
@@ -33,15 +33,19 @@ namespace Safari_Management
             Specie = specie;
             Name = name;
             Location = location;
+            Genre = genre;
             DateOfBirth = dateofbirth;
         }
 
         //Método que regista os animais
         public int registerAnimal(int numOfreg, List<Animals> animalsList)
         {
+                    
             numOfreg = int.Parse(Console.ReadLine());
-        
-            for(int i = 0; i < numOfreg; i++) {
+
+            for (int i = 0; i < numOfreg; i++)
+            {
+                
                 Console.Write("Id: ");
                 int animalId = int.Parse(Console.ReadLine());
 
@@ -59,26 +63,33 @@ namespace Safari_Management
                     string specie = Console.ReadLine();
                     Console.Write("Name: ");
                     string name = Console.ReadLine();
+
+                    //Classe a parte para determinar local
                     Console.Write("Location: ");
-                    string location = Console.ReadLine();
+                    string locationName = Console.ReadLine();
+                    Location location = new Location(locationName);
+
+                    Console.Write("Genre: ");
+                    string genre = Console.ReadLine();
                     Console.Write("Date of birth: ");
                     DateTime dateofbirth = new DateTime();
                     bool validDate = false;
 
-                    while(!validDate)
+                    while (!validDate)
                     {
                         Console.Write("Date of Birth (dd/MM/yyyy): ");
-                        if(DateTime.TryParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateofbirth))
+                        if (DateTime.TryParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateofbirth))
                         {
                             validDate = true;
                         }
-                        else {
+                        else
+                        {
                             Console.WriteLine("Invalid date of birth. Please try again.");
                         }
                     }
 
                     // Cria uma nova instância da classe `Animals` com todos os dados do novo animal
-                    Animals animal = new Animals(animalId, weight, height, specie, name, location, dateofbirth);
+                    Animals animal = new Animals(animalId, weight, height, specie, name, location, genre, dateofbirth);
 
                     // Adiciona o novo animal à lista
                     animalsList.Add(animal);
@@ -97,7 +108,7 @@ namespace Safari_Management
             {
                 using (FileStream fs = new FileStream(fileName, FileMode.Create))
                 {
-                    IFormatter formatter = new BinaryFormatter();
+                    BinaryFormatter formatter = new BinaryFormatter();
                     formatter.Serialize(fs, animalsList);
                 }
 
@@ -116,7 +127,7 @@ namespace Safari_Management
             {
                 using (FileStream fs = new FileStream(fileName, FileMode.Open))
                 {
-                    IFormatter formatter = new BinaryFormatter();
+                    BinaryFormatter formatter = new BinaryFormatter();
                     List<Animals> animalsList = formatter.Deserialize(fs) as List<Animals>;
 
                     if (animalsList != null && animalsList.Count > 0)

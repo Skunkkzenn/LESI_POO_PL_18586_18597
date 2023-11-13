@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using Safari_Management;
+using Safari_Management.Entities;
 
 namespace Safari_Management
 {

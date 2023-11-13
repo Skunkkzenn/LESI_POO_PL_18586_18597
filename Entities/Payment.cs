@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Safari_Management;
 using System.Globalization;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Safari_Management
+namespace Safari_Management.Entities
 {
     class Payment //Classe para definir o Pagamento
     {
         //Propriedades do pagamento
-        public int IDPayment { get; set; }
+        public int IdPay { get; set; }
         public decimal Value { get; set; }
         public int Date { get; set; }
         public string Paymentmethod { get; set; }
@@ -25,7 +24,7 @@ namespace Safari_Management
         {
 
             //Inicializa as propriedades com os valores fornecidos
-            IDPayment = idpayment;
+            IdPay = idpayment;
             Value = value;
             Date = date;
             Paymentmethod = paymentmethod;
@@ -53,7 +52,7 @@ namespace Safari_Management
         }
 
         //Método que regista os pagamentos
-        public int RegisterPayment(int numOfreg, List<Payment> paymentList) 
+        public int RegisterPayment(int numOfreg, List<Payment> paymentList)
         {
             return paymentList.Count;
         }
