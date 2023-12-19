@@ -4,12 +4,15 @@ using System.IO;
 using System.Globalization;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using Safari_Management.Interfaces;
+using Safari_Management.Entities.SecondaryEntities;
 
 namespace Safari_Management.Entities
 {
     [Serializable] // Marcar a classe como serializável
-    class Animals //Classe para definir os animais
+    class Animals : Database //Classe para definir os animais
     {
+        public static List<Animals> listAnimals = new List<Animals>();
 
         //Propriedades dos Clientes
         public int Id { get; set; }
@@ -38,14 +41,15 @@ namespace Safari_Management.Entities
         }
 
         //Método que regista os animais
-        public int registerAnimal(int numOfreg, List<Animals> animalsList)
+        //alterei int para void
+        public void registerAnimal(int numOfreg, List<Animals> animalsList)
         {
-                    
+
             numOfreg = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < numOfreg; i++)
             {
-                
+
                 Console.Write("Id: ");
                 int animalId = int.Parse(Console.ReadLine());
 
@@ -55,24 +59,20 @@ namespace Safari_Management.Entities
                 }
                 else
                 {
-                    Console.Write("Weight: ");
-                    double weight = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    Console.Write("Height: ");
-                    double height = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    Console.Write("Specie: ");
-                    string specie = Console.ReadLine();
-                    Console.Write("Name: ");
-                    string name = Console.ReadLine();
+                    Console.Write("Weight: "); double weight = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    Console.Write("Height: "); double height = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    Console.Write("Specie: "); string specie = Console.ReadLine();
+                    Console.Write("Name: ");   string name = Console.ReadLine();
 
-                    //Classe a parte para determinar local
                     Console.Write("Location: ");
                     string locationName = Console.ReadLine();
+                    //Instancia classe do local
                     Location location = new Location(locationName);
 
-                    Console.Write("Genre: ");
-                    string genre = Console.ReadLine();
-                    Console.Write("Date of birth: ");
-                    DateTime dateofbirth = new DateTime();
+                    Console.Write("Genre: "); string genre = Console.ReadLine();
+                    Console.Write("Date of birth: "); DateTime dateofbirth = new DateTime();
+
+                    //Para verificar a inserção correta da data de nascimento
                     bool validDate = false;
 
                     while (!validDate)
@@ -96,8 +96,6 @@ namespace Safari_Management.Entities
 
                 }
             }
-
-            return animalsList.Count;
 
         }
 

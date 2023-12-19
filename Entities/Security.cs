@@ -4,11 +4,13 @@ using System.IO;
 using System.Globalization;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using Safari_Management.Entities.SecondaryEntities;
+using Safari_Management.Interfaces;
 
 namespace Safari_Management.Entities
 {
     [Serializable] // Marcar a classe como serializável
-    class Security //Classe para definir o Segurança
+    class Security : Database //Classe para definir o Segurança
     {
 
         //Propriedades dos Seguranças
@@ -33,42 +35,5 @@ namespace Safari_Management.Entities
             EmergencyNumber = emergencyNumbers;
 
         }
-
-        //Método que regista os seguranças
-        public int RegisterSecurity(int numOfreg, List<Security> securityList)
-        {
-            return securityList.Count;
-        }
-
-        //Método que salva os dados dos seguranças em um ficheiro binário
-        public void SaveSecurityToFile(List<Security> securityList, string fileName)
-        {
-
-        }
-
-        //Método que lê os dados dos seguranças do ficheiro binário
-        public List<Security> ReadSecurityFromFile(string fileName)
-        {
-            return null;
-        }
-
-        //Método que aloca segurança a um determinado setor
-        public void AssignSectorSecurity(int sid, string section)
-        {
-
-        }
-
-        //Método que define procedimentos de emergência
-        public void DefineEmergencyProcedures(string processes)
-        {
-
-        }
-
-        //Método que reporta emergência
-        public void ReportEmergency(string emergencynumbers)
-        {
-
-        }
-
     }
 }

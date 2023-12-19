@@ -4,11 +4,14 @@ using System.IO;
 using System.Globalization;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using Safari_Management.Interfaces;
 
 namespace Safari_Management.Entities
 {
-    class Payment //Classe para definir o Pagamento
+    class Payment : Database, Business  //Classe para definir o Pagamento
     {
+        private static List<Payment> listPayment = new List<Payment>();
+
         //Propriedades do pagamento
         public int IdPay { get; set; }
         public decimal Value { get; set; }
@@ -32,42 +35,5 @@ namespace Safari_Management.Entities
             Paymentdetails = paymentdetails;
 
         }
-
-        //Método para escolher o método de pagamento
-        public string ChoosePaymentMethod(string paymentmethod)
-        {
-            return paymentmethod;
-        }
-
-        //Método para efetuar o pagamentos
-        public void MakePayment(decimal valor, string paymentmethod)
-        {
-
-        }
-
-        //Método que gera o recibo após o pagamento
-        public void GenerateReceipt(Payment payment)
-        {
-
-        }
-
-        //Método que regista os pagamentos
-        public int RegisterPayment(int numOfreg, List<Payment> paymentList)
-        {
-            return paymentList.Count;
-        }
-
-        //Método que salva os dados dos pagamentos em um ficheiro binário
-        public void SavePaymentToFile(List<Payment> paymentList, string fileName)
-        {
-
-        }
-
-        //Método que lê os dados dos pagamentos do ficheiro binário
-        public List<Payment> ReadPaymentFromFile(string fileName)
-        {
-            return null;
-        }
-
     }
 }
