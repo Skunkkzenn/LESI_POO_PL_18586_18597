@@ -1,15 +1,16 @@
-﻿/* using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Globalization;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using Safari_Management.Interfaces;
 
 namespace Safari_Management.Entities
 {
 
     [Serializable]
-    class Clients
+    class Clients : Database
     { //Classe para definir os Clientes
 
         //Propriedades dos Clientes
@@ -162,11 +163,10 @@ namespace Safari_Management.Entities
         //Método para exibir as informações dos clientes
         public override string ToString()
         {
-            return $"ID: {ID}, Name: {Name}, DateOfBirth: {DateofBirth}, Contact: {Contact}, Email: {Email}, NIF:{NIF} ,Location: {Location}";
+            return $"ID: {IdCli}, Name: {Name}, DateOfBirth: {DateofBirth}, Contact: {Contact}, Email: {Email}, NIF:{NIF} ,Location: {Location}";
 
         }
 
     }
 
 }
-*/

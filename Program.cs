@@ -49,7 +49,7 @@ namespace Safari_Management
                 {
                     int numOfReg = 0;
                     Console.Write("How many animals do you want to register? ");
-                   
+
                     //Chama o método registerAnimal, junto com animalManager, onde aloca os atributos da classe inseridos pelo utilizador
                     int registeredCount = animalManager.registerAnimal(numOfReg, animalsList);
 
@@ -59,10 +59,15 @@ namespace Safari_Management
 
                     animalManager.ReadAnimalsFromFile("AnimalList.bin");
 
-                    /* foreach (Animals animal in animalsList)
+
+                    /* 
+                    Verificar!!!
+
+                    foreach (Animals animal in animalsList)
                     {
                         Console.WriteLine($"Id: {animal.Id}, Weight: {animal.Weight}, Height: {animal.Height}");
-                    }  */
+                    } 
+                    */
                 }
 
                 else if (choice == 2)

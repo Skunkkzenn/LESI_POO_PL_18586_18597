@@ -1,4 +1,4 @@
-﻿namespace Safari_Management.Entities;
+﻿namespace Safari_Management.Entities.SecondaryEntities;
 
 [Serializable] // Marcar a classe como serializável
 class Section
