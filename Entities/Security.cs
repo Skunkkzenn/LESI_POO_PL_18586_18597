@@ -35,5 +35,25 @@ namespace Safari_Management.Entities
             EmergencyNumber = emergencyNumbers;
 
         }
+
+        public void Register()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Search()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

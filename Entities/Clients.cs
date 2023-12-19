@@ -1,4 +1,4 @@
-﻿using System;
+﻿/* using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Globalization;
@@ -167,6 +167,26 @@ namespace Safari_Management.Entities
 
         }
 
+        public void Register()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Search()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
+*/

@@ -11,9 +11,7 @@ namespace Safari_Management
     {
         static void Main(string[] args)
         {
-            List<Animals> animalsList = new List<Animals>(); // Cria uma lista para armazenar os animais registrados
-
-            Animals animalManager = new Animals(); // Cria uma instância da classe Animals
+            Animals animalManager = new Animals(); // Cria um objeto da classe Animals
 
             Console.WriteLine("Welcome to the animal registration system!");
 
@@ -30,11 +28,11 @@ namespace Safari_Management
 
                 if (choice == 0)
                 {
-                    animalsList = animalManager.ReadAnimalsFromFile("AnimalList.bin"); // Atualize a lista com os dados lidos do arquivo
+                    Animals.listAnimals = animalManager.ReadAnimalsFromFile("AnimalList.bin"); // Atualize a lista com os dados lidos do arquivo
 
-                    if (animalsList != null)
+                    if (Animals.listAnimals != null)
                     {
-                        foreach (Animals animal in animalsList)
+                        foreach (Animals animal in Animals.listAnimals)
                         {
                             Console.WriteLine(animal);
                         }
@@ -47,15 +45,15 @@ namespace Safari_Management
 
                 else if (choice == 1)
                 {
-                    int numOfReg = 0;
                     Console.Write("How many animals do you want to register? ");
 
+
                     //Chama o método registerAnimal, junto com animalManager, onde aloca os atributos da classe inseridos pelo utilizador
-                    int registeredCount = animalManager.registerAnimal(numOfReg, animalsList);
+                    animalManager.Register();
 
-                    Console.WriteLine($"Total registered animals: {registeredCount}");
+                    Console.WriteLine($"Total registered animals: {animalManager.TotalRegisteredAnimals}");
 
-                    animalManager.SaveAnimalsToFile(animalsList, "AnimalList.bin");
+                    animalManager.SaveAnimalsToFile(Animals.listAnimals, "AnimalList.bin");
 
                     animalManager.ReadAnimalsFromFile("AnimalList.bin");
 
