@@ -27,58 +27,76 @@ namespace Safari_Management
                 Console.WriteLine("------------------------------------------------------------");
                 int choice = int.Parse(Console.ReadLine());
 
-                if (choice == 0)
+                switch (choice)
                 {
-                    Animals.listAnimals = animalManager.ReadAnimalsFromFile("AnimalList.bin"); // Atualize a lista com os dados lidos do arquivo
 
-                    if (Animals.listAnimals != null)
-                    {
-                        foreach (Animals animal in Animals.listAnimals)
+                    case 0:
+                        Animals.listAnimals = animalManager.ReadAnimalsFromFile("AnimalList.bin");
+                        if (Animals.listAnimals != null)
                         {
-                            Console.WriteLine(animal);
+
+                            foreach (Animals animals in Animals.listAnimals)
+                            {
+                                Console.WriteLine(animals);
+                            }
+
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("The animal list is empty or the data could not be read.");
-                    }
+                        else
+                        {
+                            Console.WriteLine("The animal list is empty.");
+                        }
+                        break;
+
+
+                    case 1:
+                        Console.WriteLine("How many animals do you want to register?");
+                        
+                        //Chama o método registerAnimal, junto com animalManager, onde aloca os atributos da classe inseridos pelo utilizador
+                        animalManager.Register();
+                        
+                        Console.WriteLine($"Total registered animals: {animalManager.TotalRegisteredAnimals}");
+                        
+                        animalManager.SaveAnimalsToFile(Animals.listAnimals, "AnimalList.bin");
+
+                        /* 
+                        Verificar!!!
+
+                        foreach (Animals animal in animalsList)
+                        {
+                            Console.WriteLine($"Id: {animal.Id}, Weight: {animal.Weight}, Height: {animal.Height}");
+                        } 
+                        */
+
+                        break;
+
+
+                    case 2:
+
+                        Console.WriteLine($"{animalManager.Count()}");
+
+                        break;
+
+
+                    case 3:
+
+                        Console.WriteLine("Leaving the program.");
+
+                        break;
+
+
+                    default:
+
+                        Console.WriteLine("Invalid option. Please choose a valid option.");
+
+                        break;
+
                 }
 
-                else if (choice == 1)
+                if (choice == 3)
                 {
-                    Console.Write("How many animals do you want to register? ");
-
-
-                    //Chama o método registerAnimal, junto com animalManager, onde aloca os atributos da classe inseridos pelo utilizador
-                    animalManager.Register();
-
-                    Console.WriteLine($"Total registered animals: {animalManager.TotalRegisteredAnimals}");
-
-                    animalManager.SaveAnimalsToFile(Animals.listAnimals, "AnimalList.bin");
-
-                    /* 
-                    Verificar!!!
-
-                    foreach (Animals animal in animalsList)
-                    {
-                        Console.WriteLine($"Id: {animal.Id}, Weight: {animal.Weight}, Height: {animal.Height}");
-                    } 
-                    */
-                }
-
-                else if (choice == 2) {
-                    Console.WriteLine($"{animalManager.Count()}"); 
                     break;
                 }
-                else if (choice == 3)
-                {
-                    Console.WriteLine("Leaving the program.");
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid option. Please choose a valid option.");
-                }
+
             }
         }
     }
