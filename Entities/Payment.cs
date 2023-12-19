@@ -4,10 +4,11 @@ using System.IO;
 using System.Globalization;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using Safari_Management.Interfaces;
 
 namespace Safari_Management.Entities
 {
-    class Payment //Classe para definir o Pagamento
+    class Payment : Database, Business  //Classe para definir o Pagamento
     {
         private static List<Payment> listPayment = new List<Payment>();
 
