@@ -23,6 +23,7 @@ namespace Safari_Management.Entities
         public Location Location { get; set; }
         public string Genre { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public int TotalRegisteredAnimals { get; private set; } = 0;
 
         public Animals() { }
 
@@ -42,18 +43,16 @@ namespace Safari_Management.Entities
 
         //Método que regista os animais
         //alterei int para void
-        public void registerAnimal(int numOfreg, List<Animals> animalsList)
+        public void Register()
         {
-
-            numOfreg = int.Parse(Console.ReadLine());
+            int numOfreg = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < numOfreg; i++)
             {
-
                 Console.Write("Id: ");
                 int animalId = int.Parse(Console.ReadLine());
 
-                if (animalsList.Any(animal => animal.Id == animalId))
+                if (listAnimals.Any(animal => animal.Id == animalId))
                 {
                     Console.WriteLine("Animal ID already exists.");
                 }
@@ -62,7 +61,7 @@ namespace Safari_Management.Entities
                     Console.Write("Weight: "); double weight = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                     Console.Write("Height: "); double height = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                     Console.Write("Specie: "); string specie = Console.ReadLine();
-                    Console.Write("Name: ");   string name = Console.ReadLine();
+                    Console.Write("Name: "); string name = Console.ReadLine();
 
                     Console.Write("Location: ");
                     string locationName = Console.ReadLine();
@@ -92,22 +91,53 @@ namespace Safari_Management.Entities
                     Animals animal = new Animals(animalId, weight, height, specie, name, location, genre, dateofbirth);
 
                     // Adiciona o novo animal à lista
-                    animalsList.Add(animal);
-
+                    listAnimals.Add(animal);
+                    TotalRegisteredAnimals++;
                 }
             }
 
         }
+        public void Update()
+        {
+            Animals animalUpdate = listAnimals.Find(x => x.Id == Id);
+            if (animalUpdate != null)
+            {
+                animalUpdate.Weight = Weight;
+                animalUpdate.Height = Height;
+                animalUpdate.Specie = Name;
+                animalUpdate.Location = Location;
+                animalUpdate.Genre = Genre;
+                animalUpdate.DateOfBirth = DateOfBirth;
+            }
+            else Console.WriteLine("The animal does not exist.");
+        }
+        public void Delete()
+        {
+            Animals animalRemove = listAnimals.Find(x => x.Id == Id);
+            if (animalRemove != null)
+            {
+                listAnimals.Remove(animalRemove);
+            }
+        }
+        public void Search()
+        {
+            Animals searchAnimal = listAnimals.Find(x => x.Id == Id);
+            if (searchAnimal != null)
+            {
+                Console.WriteLine($"Animal >{Id}< found: Name: {searchAnimal.Name}, Specie: {searchAnimal.Specie}, Genre: {searchAnimal.Genre}");
+            }
+            else Console.WriteLine("The animal does not exist.");
+        }
 
         //Método que salva os dados dos animais em um ficheiro binário
-        public void SaveAnimalsToFile(List<Animals> animalsList, string fileName)
+        public void SaveAnimalsToFile(List<Animals> listAnimals, string fileName)
         {
             try
             {
                 using (FileStream fs = new FileStream(fileName, FileMode.Create))
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
-                    formatter.Serialize(fs, animalsList);
+                    formatter.Serialize(fs, listAnimals);
                 }
 
                 Console.WriteLine($"Animal data saved in {fileName} successfully.");
@@ -126,11 +156,11 @@ namespace Safari_Management.Entities
                 using (FileStream fs = new FileStream(fileName, FileMode.Open))
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
-                    List<Animals> animalsList = formatter.Deserialize(fs) as List<Animals>;
+                    List<Animals> listAnimals = formatter.Deserialize(fs) as List<Animals>;
 
-                    if (animalsList != null && animalsList.Count > 0)
+                    if (listAnimals != null && listAnimals.Count > 0)
                     {
-                        return animalsList;
+                        return listAnimals;
                     }
                     else
                     {
@@ -153,6 +183,7 @@ namespace Safari_Management.Entities
             return $"Id: {Id}, Weight: {Weight.ToString("F2", CultureInfo.InvariantCulture)}, Height: {Height.ToString("F2", CultureInfo.InvariantCulture)}, Specie: {Specie}, Name: {Name}, Location: {Location}, DateOfBirth: {DateOfBirth}";
 
         }
+
     }
 }
 
