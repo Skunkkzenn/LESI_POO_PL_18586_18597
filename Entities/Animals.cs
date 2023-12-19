@@ -129,6 +129,11 @@ namespace Safari_Management.Entities
             else Console.WriteLine("The animal does not exist.");
         }
 
+        public int Count()
+        { 
+            return listAnimals.Count;
+        }
+
         //Método que salva os dados dos animais em um ficheiro binário
         public void SaveAnimalsToFile(List<Animals> listAnimals, string fileName)
         {

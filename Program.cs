@@ -13,17 +13,18 @@ namespace Safari_Management
         {
             Animals animalManager = new Animals(); // Cria um objeto da classe Animals
 
-            Console.WriteLine("Welcome to the animal registration system!");
-
+            Console.WriteLine("\t\t\t\tWelcome to the animal registration system!");
+            Console.WriteLine(" #####                                   #     #                                                               \r\n#     #   ##   ######   ##   #####  #    ##   ##   ##   #    #   ##    ####  ###### #    # ###### #    # ##### \r\n#        #  #  #       #  #  #    # #    # # # #  #  #  ##   #  #  #  #    # #      ##  ## #      ##   #   #   \r\n #####  #    # #####  #    # #    # #    #  #  # #    # # #  # #    # #      #####  # ## # #####  # #  #   #   \r\n      # ###### #      ###### #####  #    #     # ###### #  # # ###### #  ### #      #    # #      #  # #   #   \r\n#     # #    # #      #    # #   #  #    #     # #    # #   ## #    # #    # #      #    # #      #   ##   #   \r\n #####  #    # #      #    # #    # #    #     # #    # #    # #    #  ####  ###### #    # ###### #    #   #  ");
+            Console.WriteLine();
             //Inicia o programa
             while (true)
             {
                 Console.Write("Select one option: ");
-                Console.WriteLine();
-                Console.WriteLine("0. Load database animal");
-                Console.WriteLine("1. Regiter a new animal");
-                Console.WriteLine("2. Exit");
-                Console.WriteLine();
+                Console.WriteLine("0. Load database animal.");
+                Console.WriteLine("1. Regiter a new animal.");
+                Console.WriteLine("2. Count animals in list.");
+                Console.WriteLine("3. Exit.");
+                Console.WriteLine("------------------------------------------------------------");
                 int choice = int.Parse(Console.ReadLine());
 
                 if (choice == 0)
@@ -55,9 +56,6 @@ namespace Safari_Management
 
                     animalManager.SaveAnimalsToFile(Animals.listAnimals, "AnimalList.bin");
 
-                    animalManager.ReadAnimalsFromFile("AnimalList.bin");
-
-
                     /* 
                     Verificar!!!
 
@@ -68,7 +66,11 @@ namespace Safari_Management
                     */
                 }
 
-                else if (choice == 2)
+                else if (choice == 2) {
+                    Console.WriteLine($"{animalManager.Count()}"); 
+                    break;
+                }
+                else if (choice == 3)
                 {
                     Console.WriteLine("Leaving the program.");
                     break;
