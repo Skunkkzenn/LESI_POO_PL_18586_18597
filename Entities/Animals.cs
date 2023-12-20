@@ -97,6 +97,7 @@ namespace Safari_Management.Entities
             }
 
         }
+
         public void Update()
         {
             Console.WriteLine("Enter the ID of the animal you want to update:");
@@ -139,6 +140,7 @@ namespace Safari_Management.Entities
             }
             else Console.WriteLine("The animal does not exist.");
         }
+
         public void Delete()
         {
             Console.Write("Enter a id animal to remove: ");
@@ -155,9 +157,13 @@ namespace Safari_Management.Entities
             else Console.WriteLine("The animal does not exist.");
 
         }
+
         public void Search()
         {
-            Animals searchAnimal = listAnimals.Find(x => x.Id == Id);
+            Console.WriteLine("Enter a id animal to search: ");
+            int idSearch = int.Parse(Console.ReadLine());
+
+            Animals searchAnimal = listAnimals.Find(x => x.Id == idSearch);
             if (searchAnimal != null)
             {
                 Console.WriteLine($"Animal >{Id}< found: Name: {searchAnimal.Name}, Specie: {searchAnimal.Specie}, Genre: {searchAnimal.Genre}");
