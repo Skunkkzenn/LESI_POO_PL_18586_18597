@@ -23,6 +23,7 @@ namespace Safari_Management.Entities
         public Location Location { get; set; }
         public string Genre { get; set; }
         public DateTime DateOfBirth { get; set; }
+        //TotalRegisteredAnimals serve apenas para retornar a quantidade de animais que foram registrados pelo utilizador.
         public int TotalRegisteredAnimals { get; private set; } = 0;
 
         public Animals() { }
@@ -174,6 +175,40 @@ namespace Safari_Management.Entities
         public int Count()
         {
             return listAnimals.Count;
+        }
+
+        public void RunList()
+        {
+            Animals animalManager = new Animals();
+            bool validate = false;
+            listAnimals = animalManager.ReadAnimalsFromFile("AnimalList.bin");
+            if (listAnimals != null)
+            {
+                validate = true;                 
+            }
+            else
+            {
+                Console.WriteLine("The animal list is empty.");
+            }
+        }
+
+        public void ExibitionList()
+        {
+            Animals animalManager = new Animals();
+            listAnimals = animalManager.ReadAnimalsFromFile("AnimalList.bin");
+            if (listAnimals != null)
+            {
+
+                foreach (Animals animals in listAnimals)
+                {
+                    Console.WriteLine(animals);
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("The animal list is empty.");
+            }
         }
 
         //Método que salva os dados dos animais em um ficheiro binário

@@ -16,7 +16,6 @@ namespace Safari_Management
             Console.WriteLine("\t\t\t\tWelcome to the animal registration system!");
             Console.WriteLine(" #####                                   #     #                                                               \r\n#     #   ##   ######   ##   #####  #    ##   ##   ##   #    #   ##    ####  ###### #    # ###### #    # ##### \r\n#        #  #  #       #  #  #    # #    # # # #  #  #  ##   #  #  #  #    # #      ##  ## #      ##   #   #   \r\n #####  #    # #####  #    # #    # #    #  #  # #    # # #  # #    # #      #####  # ## # #####  # #  #   #   \r\n      # ###### #      ###### #####  #    #     # ###### #  # # ###### #  ### #      #    # #      #  # #   #   \r\n#     # #    # #      #    # #   #  #    #     # #    # #   ## #    # #    # #      #    # #      #   ##   #   \r\n #####  #    # #      #    # #    # #    #     # #    # #    # #    #  ####  ###### #    # ###### #    #   #  ");
             Console.WriteLine();
-            //Inicia o programa
             while (true)
             {
                 Console.WriteLine("Select one option: ");
@@ -29,25 +28,13 @@ namespace Safari_Management
                 Console.WriteLine("6. Exit.");
                 Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
                 int choice = int.Parse(Console.ReadLine());
-
+             
+               
                 switch (choice)
                 {
 
                     case 0:
-                        Animals.listAnimals = animalManager.ReadAnimalsFromFile("AnimalList.bin");
-                        if (Animals.listAnimals != null)
-                        {
-
-                            foreach (Animals animals in Animals.listAnimals)
-                            {
-                                Console.WriteLine(animals);
-                            }
-                            
-                        }
-                        else
-                        {
-                            Console.WriteLine("The animal list is empty.");
-                        }
+                        animalManager.ExibitionList();
                         break;
 
 
@@ -61,20 +48,11 @@ namespace Safari_Management
                         
                         animalManager.SaveAnimalsToFile(Animals.listAnimals, "AnimalList.bin");
 
-                        /* 
-                        Verificar!!!
-
-                        foreach (Animals animal in animalsList)
-                        {
-                            Console.WriteLine($"Id: {animal.Id}, Weight: {animal.Weight}, Height: {animal.Height}");
-                        } 
-                        */
-
                         break;
 
 
                     case 2:
-
+                        animalManager.RunList();
                         Console.WriteLine($"{animalManager.Count()}");
 
                         break;
@@ -90,7 +68,7 @@ namespace Safari_Management
                         break;
 
                     case 5:
-
+                        animalManager.RunList();
                         animalManager.Search();
                         break;
                     
