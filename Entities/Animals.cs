@@ -180,6 +180,21 @@ namespace Safari_Management.Entities
         public void RunList()
         {
             Animals animalManager = new Animals();
+            bool validate = false;
+            listAnimals = animalManager.ReadAnimalsFromFile("AnimalList.bin");
+            if (listAnimals != null)
+            {
+                validate = true;                 
+            }
+            else
+            {
+                Console.WriteLine("The animal list is empty.");
+            }
+        }
+
+        public void ExibitionList()
+        {
+            Animals animalManager = new Animals();
             listAnimals = animalManager.ReadAnimalsFromFile("AnimalList.bin");
             if (listAnimals != null)
             {

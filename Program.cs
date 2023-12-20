@@ -16,7 +16,6 @@ namespace Safari_Management
             Console.WriteLine("\t\t\t\tWelcome to the animal registration system!");
             Console.WriteLine(" #####                                   #     #                                                               \r\n#     #   ##   ######   ##   #####  #    ##   ##   ##   #    #   ##    ####  ###### #    # ###### #    # ##### \r\n#        #  #  #       #  #  #    # #    # # # #  #  #  ##   #  #  #  #    # #      ##  ## #      ##   #   #   \r\n #####  #    # #####  #    # #    # #    #  #  # #    # # #  # #    # #      #####  # ## # #####  # #  #   #   \r\n      # ###### #      ###### #####  #    #     # ###### #  # # ###### #  ### #      #    # #      #  # #   #   \r\n#     # #    # #      #    # #   #  #    #     # #    # #   ## #    # #    # #      #    # #      #   ##   #   \r\n #####  #    # #      #    # #    # #    #     # #    # #    # #    #  ####  ###### #    # ###### #    #   #  ");
             Console.WriteLine();
-            //Inicia o programa
             while (true)
             {
                 Console.WriteLine("Select one option: ");
@@ -29,12 +28,13 @@ namespace Safari_Management
                 Console.WriteLine("6. Exit.");
                 Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
                 int choice = int.Parse(Console.ReadLine());
-
+             
+               
                 switch (choice)
                 {
 
                     case 0:
-                        animalManager.RunList();
+                        animalManager.ExibitionList();
                         break;
 
 
