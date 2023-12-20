@@ -228,7 +228,7 @@ namespace Safari_Management.Entities
         public override string ToString()
         {
             //return $"Id: {Id}, Weight: {Weight.ToString("F2", CultureInfo.InvariantCulture)}, Height: {Height.ToString("F2", CultureInfo.InvariantCulture)}, Specie: {Specie}, Name: {Name}, Location: {Location}, DateOfBirth: {DateOfBirth.ToString("dd/MM/yyyy")}";
-            return $"Id: {Id} | Weight: {Weight.ToString("F2", CultureInfo.InvariantCulture).PadRight(10)} | Height: {Height.ToString("F2", CultureInfo.InvariantCulture).PadRight(10)} | Specie: {Specie.PadRight(10)} | Genre: {Genre.PadRight(10)} |Name: {Name.PadRight(10)} | Location: {Location.ToString().PadRight(10)} | DateOfBirth: {DateOfBirth.ToString("dd/MM/yyyy")}";
+            return $"Id: {Id} | Weight: {Weight.ToString("F2", CultureInfo.InvariantCulture).PadRight(5)} | Height: {Height.ToString("F2", CultureInfo.InvariantCulture).PadRight(5)} | Specie: {Specie.PadRight(5)} | Genre: {Genre.PadRight(5)} | Name: {Name.PadRight(5)} | Location: {Location.ToString().PadRight(5)} | DateOfBirth: {DateOfBirth.ToString("dd/MM/yyyy")}";
 
         }
 
