@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FirstLibrary\FirstLibrary.csproj" />
+    <ProjectReference Include="..\FirstLibrary\SuperDll.csproj" />
   </ItemGroup>
 
 </Project>

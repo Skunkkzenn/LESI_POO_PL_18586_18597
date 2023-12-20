@@ -2,28 +2,28 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "FirstLibrary/1.0.0": {
+      "SuperDll/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/FirstLibrary.dll": {}
+          "bin/placeholder/SuperDll.dll": {}
         },
         "runtime": {
-          "bin/placeholder/FirstLibrary.dll": {}
+          "bin/placeholder/SuperDll.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "FirstLibrary/1.0.0": {
+    "SuperDll/1.0.0": {
       "type": "project",
-      "path": "../FirstLibrary/FirstLibrary.csproj",
-      "msbuildProject": "../FirstLibrary/FirstLibrary.csproj"
+      "path": "../FirstLibrary/SuperDll.csproj",
+      "msbuildProject": "../FirstLibrary/SuperDll.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "FirstLibrary >= 1.0.0"
+      "SuperDll >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -58,8 +58,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\victo\\source\\repos\\FirstLibrary\\FirstLibrary.csproj": {
-              "projectPath": "C:\\Users\\victo\\source\\repos\\FirstLibrary\\FirstLibrary.csproj"
+            "C:\\Users\\victo\\source\\repos\\FirstLibrary\\SuperDll.csproj": {
+              "projectPath": "C:\\Users\\victo\\source\\repos\\FirstLibrary\\SuperDll.csproj"
             }
           }
         }
