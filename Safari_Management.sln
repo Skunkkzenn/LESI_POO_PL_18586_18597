@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Safari_Management", "Safari_Management.csproj", "{B657A577-0345-4F84-932A-7B39F28D438C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstLibrary", "..\FirstLibrary\FirstLibrary.csproj", "{DCB2023E-2B6B-443B-B4E9-958F00846C27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B657A577-0345-4F84-932A-7B39F28D438C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B657A577-0345-4F84-932A-7B39F28D438C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B657A577-0345-4F84-932A-7B39F28D438C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB2023E-2B6B-443B-B4E9-958F00846C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB2023E-2B6B-443B-B4E9-958F00846C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB2023E-2B6B-443B-B4E9-958F00846C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB2023E-2B6B-443B-B4E9-958F00846C27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

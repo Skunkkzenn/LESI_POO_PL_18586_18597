@@ -34,20 +34,7 @@ namespace Safari_Management
                 {
 
                     case 0:
-                        Animals.listAnimals = animalManager.ReadAnimalsFromFile("AnimalList.bin");
-                        if (Animals.listAnimals != null)
-                        {
-
-                            foreach (Animals animals in Animals.listAnimals)
-                            {
-                                Console.WriteLine(animals);
-                            }
-                            
-                        }
-                        else
-                        {
-                            Console.WriteLine("The animal list is empty.");
-                        }
+                        animalManager.RunList();
                         break;
 
 
@@ -61,20 +48,11 @@ namespace Safari_Management
                         
                         animalManager.SaveAnimalsToFile(Animals.listAnimals, "AnimalList.bin");
 
-                        /* 
-                        Verificar!!!
-
-                        foreach (Animals animal in animalsList)
-                        {
-                            Console.WriteLine($"Id: {animal.Id}, Weight: {animal.Weight}, Height: {animal.Height}");
-                        } 
-                        */
-
                         break;
 
 
                     case 2:
-
+                        animalManager.RunList();
                         Console.WriteLine($"{animalManager.Count()}");
 
                         break;
@@ -90,7 +68,7 @@ namespace Safari_Management
                         break;
 
                     case 5:
-
+                        animalManager.RunList();
                         animalManager.Search();
                         break;
                     
