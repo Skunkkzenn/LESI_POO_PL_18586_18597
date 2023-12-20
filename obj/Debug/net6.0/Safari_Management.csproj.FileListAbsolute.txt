@@ -47,3 +47,4 @@ C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\bin\Debug\net6.0\Sa
 C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\bin\Debug\net6.0\Safari_Management.pdb
 C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.genruntimeconfig.cache
 C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\ref\Safari_Management.dll
+C:\Users\Programacao PC\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.csproj.AssemblyReference.cache

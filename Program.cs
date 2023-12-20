@@ -19,11 +19,13 @@ namespace Safari_Management
             //Inicia o programa
             while (true)
             {
-                Console.Write("Select one option: ");
+                Console.WriteLine("Select one option: ");
                 Console.WriteLine("0. Load database animal.");
                 Console.WriteLine("1. Regiter a new animal.");
                 Console.WriteLine("2. Count animals in list.");
-                Console.WriteLine("3. Exit.");
+                Console.WriteLine("3. Update animal.");
+                Console.WriteLine("4. Remove animal.");
+                Console.WriteLine("5. Exit.");
                 Console.WriteLine("------------------------------------------------------------");
                 int choice = int.Parse(Console.ReadLine());
 
@@ -76,8 +78,17 @@ namespace Safari_Management
 
                         break;
 
-
                     case 3:
+
+                        animalManager.Update();
+                        animalManager.SaveAnimalsToFile(Animals.listAnimals, "AnimalList.bin");
+                        break;
+
+                    case 4:
+                        animalManager.Delete();
+                        break;
+
+                    case 5:
 
                         Console.WriteLine("Leaving the program.");
 
@@ -89,14 +100,7 @@ namespace Safari_Management
                         Console.WriteLine("Invalid option. Please choose a valid option.");
 
                         break;
-
                 }
-
-                if (choice == 3)
-                {
-                    break;
-                }
-
             }
         }
     }

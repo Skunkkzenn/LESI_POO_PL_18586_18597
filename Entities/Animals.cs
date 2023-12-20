@@ -99,25 +99,61 @@ namespace Safari_Management.Entities
         }
         public void Update()
         {
-            Animals animalUpdate = listAnimals.Find(x => x.Id == Id);
+            Console.WriteLine("Enter the ID of the animal you want to update:");
+            int idToUpdate = int.Parse(Console.ReadLine());
+
+            Animals animalUpdate = listAnimals.Find(x => x.Id == idToUpdate);
             if (animalUpdate != null)
             {
-                animalUpdate.Weight = Weight;
-                animalUpdate.Height = Height;
-                animalUpdate.Specie = Name;
-                animalUpdate.Location = Location;
-                animalUpdate.Genre = Genre;
-                animalUpdate.DateOfBirth = DateOfBirth;
+                Console.Write("Enter the new weight: "); animalUpdate.Weight = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.Write("Enter the new height: "); animalUpdate.Height = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.Write("Enter the new species: "); animalUpdate.Specie = Console.ReadLine();
+                Console.Write("Enter the new name: "); animalUpdate.Name = Console.ReadLine();
+
+                //Cria uma nova var para armazenar o valor da nova localidade e transferir o mesmo para o animalUpdate.Location
+                Console.Write("Enter the new location: "); string newLocation = Console.ReadLine();
+                Location location = new Location(newLocation);
+                animalUpdate.Location = location;
+
+                Console.Write("Enter the new genre: "); animalUpdate.Genre = Console.ReadLine();
+
+                Console.Write("Enter the new date of birth (dd/MM/yyyy): ");
+                DateTime dateofbirth = new DateTime();
+
+                //Para verificar a inserção correta da data de nascimento
+                bool validDate = false;
+
+                while (!validDate)
+                {
+                    if (DateTime.TryParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateofbirth))
+                    {
+                        validDate = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid date of birth. Please try again.");
+                    }
+                }
+                animalUpdate.DateOfBirth = dateofbirth;
+
             }
             else Console.WriteLine("The animal does not exist.");
         }
         public void Delete()
         {
-            Animals animalRemove = listAnimals.Find(x => x.Id == Id);
+            Console.Write("Enter a id animal to remove: ");
+            int idRemove = int.Parse(Console.ReadLine());
+
+            Animals animalRemove = listAnimals.Find(x => x.Id == idRemove);
             if (animalRemove != null)
             {
                 listAnimals.Remove(animalRemove);
+                Console.WriteLine("Animal removed.");
+                SaveAnimalsToFile(listAnimals, "AnimalList.bin");
             }
+            
+            else Console.WriteLine("The animal does not exist.");
+
         }
         public void Search()
         {
@@ -130,7 +166,7 @@ namespace Safari_Management.Entities
         }
 
         public int Count()
-        { 
+        {
             return listAnimals.Count;
         }
 
@@ -185,7 +221,8 @@ namespace Safari_Management.Entities
         //Método para exibir as informações dos animais
         public override string ToString()
         {
-            return $"Id: {Id}, Weight: {Weight.ToString("F2", CultureInfo.InvariantCulture)}, Height: {Height.ToString("F2", CultureInfo.InvariantCulture)}, Specie: {Specie}, Name: {Name}, Location: {Location}, DateOfBirth: {DateOfBirth}";
+            //return $"Id: {Id}, Weight: {Weight.ToString("F2", CultureInfo.InvariantCulture)}, Height: {Height.ToString("F2", CultureInfo.InvariantCulture)}, Specie: {Specie}, Name: {Name}, Location: {Location}, DateOfBirth: {DateOfBirth.ToString("dd/MM/yyyy")}";
+            return $"Id: {Id} | Weight: {Weight.ToString("F2", CultureInfo.InvariantCulture).PadRight(10)} | Height: {Height.ToString("F2", CultureInfo.InvariantCulture).PadRight(10)} | Specie: {Specie.PadRight(10)} | Genre: {Genre.PadRight(10)} |Name: {Name.PadRight(10)} | Location: {Location.ToString().PadRight(10)} | DateOfBirth: {DateOfBirth.ToString("dd/MM/yyyy")}";
 
         }
 
