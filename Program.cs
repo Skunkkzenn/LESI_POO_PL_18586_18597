@@ -25,8 +25,9 @@ namespace Safari_Management
                 Console.WriteLine("2. Count animals in list.");
                 Console.WriteLine("3. Update animal.");
                 Console.WriteLine("4. Remove animal.");
-                Console.WriteLine("5. Exit.");
-                Console.WriteLine("------------------------------------------------------------");
+                Console.WriteLine("5. Search animal.");
+                Console.WriteLine("6. Exit.");
+                Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
@@ -41,7 +42,7 @@ namespace Safari_Management
                             {
                                 Console.WriteLine(animals);
                             }
-
+                            
                         }
                         else
                         {
