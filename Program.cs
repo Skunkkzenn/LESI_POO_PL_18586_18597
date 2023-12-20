@@ -4,6 +4,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using Safari_Management.Entities;
+using MyLibrary;
 
 namespace Safari_Management
 {
@@ -75,6 +76,13 @@ namespace Safari_Management
                     case 6:
 
                         Console.WriteLine("Leaving the program.");
+                        break;
+
+                    case 11:
+                        MinhaClasse minhaInstancia = new MinhaClasse();
+                        string saudacao = minhaInstancia.Saudacao();
+
+                        Console.WriteLine(saudacao);
                         break;
 
 

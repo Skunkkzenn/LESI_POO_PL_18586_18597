@@ -13,4 +13,8 @@
     <None Remove="Entities\Enums\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FirstLibrary\FirstLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

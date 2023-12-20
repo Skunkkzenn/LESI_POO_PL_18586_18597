@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "FirstLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/FirstLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FirstLibrary.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "FirstLibrary/1.0.0": {
+      "type": "project",
+      "path": "../FirstLibrary/FirstLibrary.csproj",
+      "msbuildProject": "../FirstLibrary/FirstLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "FirstLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\victo\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\victo\\source\\repos\\FirstLibrary\\FirstLibrary.csproj": {
+              "projectPath": "C:\\Users\\victo\\source\\repos\\FirstLibrary\\FirstLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

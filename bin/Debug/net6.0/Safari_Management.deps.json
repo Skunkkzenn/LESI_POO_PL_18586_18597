@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "Safari_Management/1.0.0": {
+        "dependencies": {
+          "FirstLibrary": "1.0.0"
+        },
         "runtime": {
           "Safari_Management.dll": {}
+        }
+      },
+      "FirstLibrary/1.0.0": {
+        "runtime": {
+          "FirstLibrary.dll": {}
         }
       }
     }
   },
   "libraries": {
     "Safari_Management/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FirstLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
