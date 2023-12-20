@@ -90,8 +90,12 @@ namespace Safari_Management
 
                     case 5:
 
-                        Console.WriteLine("Leaving the program.");
+                        animalManager.Search();
+                        break;
+                    
+                    case 6:
 
+                        Console.WriteLine("Leaving the program.");
                         break;
 
 
