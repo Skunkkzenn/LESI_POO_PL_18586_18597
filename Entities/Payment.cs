@@ -47,6 +47,7 @@ namespace Safari_Management.Entities
 
             double resultado = InterfaceDLL.ValorTotal.SomaDiaria();
             Console.Write($"Price total tickets: {resultado.ToString("F2", CultureInfo.InvariantCulture)}");
+            Console.WriteLine();
         }
 
         public void CancelInvoice()
