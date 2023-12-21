@@ -37,7 +37,7 @@ namespace Safari_Management
                         break;
 
                     case 1:
-                        RunClientsMenu(); 
+                        RunClientsMenu();
                         break;
 
                     case 2:
@@ -81,8 +81,8 @@ namespace Safari_Management
                 Console.WriteLine("6. Return to the main menu.");
                 Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
                 int choice = int.Parse(Console.ReadLine());
-             
-               
+
+
                 switch (choice)
                 {
 
@@ -119,7 +119,7 @@ namespace Safari_Management
                         animalManager.RunList();
                         animalManager.Search();
                         break;
-                    
+
                     case 6:
                         Console.WriteLine("Leaving the program.");
                         break;
@@ -143,18 +143,17 @@ namespace Safari_Management
             Console.WriteLine("\t\t\t\tWelcome to the Client registration system!");
             Console.WriteLine(" #####                                   #     #                                                               \r\n#     #   ##   ######   ##   #####  #    ##   ##   ##   #    #   ##    ####  ###### #    # ###### #    # ##### \r\n#        #  #  #       #  #  #    # #    # # # #  #  #  ##   #  #  #  #    # #      ##  ## #      ##   #   #   \r\n #####  #    # #####  #    # #    # #    #  #  # #    # # #  # #    # #      #####  # ## # #####  # #  #   #   \r\n      # ###### #      ###### #####  #    #     # ###### #  # # ###### #  ### #      #    # #      #  # #   #   \r\n#     # #    # #      #    # #   #  #    #     # #    # #   ## #    # #    # #      #    # #      #   ##   #   \r\n #####  #    # #      #    # #    # #    #     # #    # #    # #    #  ####  ###### #    # ###### #    #   #  ");
             Console.WriteLine();
-
         }
 
         static void RunPaymentMenu()
         {
-
+            Payment payManager = new Payment();
+            payManager.CreateInvoice();
             Console.WriteLine("\t\t\t\tWelcome to the Payment registration system!");
             Console.WriteLine(" #####                                   #     #                                                               \r\n#     #   ##   ######   ##   #####  #    ##   ##   ##   #    #   ##    ####  ###### #    # ###### #    # ##### \r\n#        #  #  #       #  #  #    # #    # # # #  #  #  ##   #  #  #  #    # #      ##  ## #      ##   #   #   \r\n #####  #    # #####  #    # #    # #    #  #  # #    # # #  # #    # #      #####  # ## # #####  # #  #   #   \r\n      # ###### #      ###### #####  #    #     # ###### #  # # ###### #  ### #      #    # #      #  # #   #   \r\n#     # #    # #      #    # #   #  #    #     # #    # #   ## #    # #    # #      #    # #      #   ##   #   \r\n #####  #    # #      #    # #    # #    #     # #    # #    # #    #  ####  ###### #    # ###### #    #   #  ");
             Console.WriteLine();
 
         }
-
     }
 }
 

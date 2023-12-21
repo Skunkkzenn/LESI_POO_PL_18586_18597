@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using Safari_Management.Interfaces;
+using InterfaceDLL;
 
 namespace Safari_Management.Entities
 {
@@ -38,7 +39,14 @@ namespace Safari_Management.Entities
 
         public void CreateInvoice()
         {
-            throw new NotImplementedException();
+            Console.Write("How many tickets to buy? ");
+            ValorTotal.Quantidade = int.Parse(Console.ReadLine());
+
+            Console.Write("How much is a ticket worth? ");
+            ValorTotal.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            double resultado = InterfaceDLL.ValorTotal.SomaDiaria();
+            Console.Write($"Price total tickets: {resultado.ToString("F2", CultureInfo.InvariantCulture)}");
         }
 
         public void CancelInvoice()

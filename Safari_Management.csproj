@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="FirstLibrary">
-      <HintPath>..\FirstLibrary\bin\Debug\net6.0\FirstLibrary.dll</HintPath>
+    <Reference Include="InterfaceDLL">
+      <HintPath>dll-net\InterfaceDLL.dll</HintPath>
     </Reference>
   </ItemGroup>
 

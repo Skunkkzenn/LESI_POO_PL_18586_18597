@@ -52,3 +52,5 @@ C:\Users\victo\Source\Repos\LESI_POO_PL_18586_18597\bin\Debug\net6.0\FirstLibrar
 C:\Users\victo\Source\Repos\LESI_POO_PL_18586_18597\bin\Debug\net6.0\FirstLibrary.pdb
 C:\Users\victo\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.csproj.AssemblyReference.cache
 C:\Users\victo\Source\Repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.csproj.CopyComplete
+C:\Users\Programacao PC\source\repos\LESI_POO_PL_18586_18597\bin\Debug\net6.0\InterfaceDLL.dll
+C:\Users\Programacao PC\source\repos\LESI_POO_PL_18586_18597\obj\Debug\net6.0\Safari_Management.csproj.CopyComplete
