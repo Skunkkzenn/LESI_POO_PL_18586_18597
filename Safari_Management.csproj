@@ -13,4 +13,14 @@
     <None Remove="Entities\Enums\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FirstLibrary\SuperDll.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FirstLibrary">
+      <HintPath>..\FirstLibrary\bin\Debug\net6.0\FirstLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

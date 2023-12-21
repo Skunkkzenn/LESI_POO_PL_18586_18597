@@ -1,0 +1,11 @@
+C:\Users\victo\Source\Repos\FirstLibrary\bin\Debug\net6.0\FirstLibrary.deps.json
+C:\Users\victo\Source\Repos\FirstLibrary\bin\Debug\net6.0\FirstLibrary.dll
+C:\Users\victo\Source\Repos\FirstLibrary\bin\Debug\net6.0\FirstLibrary.pdb
+C:\Users\victo\Source\Repos\FirstLibrary\obj\Debug\net6.0\FirstLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\victo\Source\Repos\FirstLibrary\obj\Debug\net6.0\FirstLibrary.AssemblyInfoInputs.cache
+C:\Users\victo\Source\Repos\FirstLibrary\obj\Debug\net6.0\FirstLibrary.AssemblyInfo.cs
+C:\Users\victo\Source\Repos\FirstLibrary\obj\Debug\net6.0\FirstLibrary.csproj.CoreCompileInputs.cache
+C:\Users\victo\Source\Repos\FirstLibrary\obj\Debug\net6.0\FirstLibrary.dll
+C:\Users\victo\Source\Repos\FirstLibrary\obj\Debug\net6.0\refint\FirstLibrary.dll
+C:\Users\victo\Source\Repos\FirstLibrary\obj\Debug\net6.0\FirstLibrary.pdb
+C:\Users\victo\Source\Repos\FirstLibrary\obj\Debug\net6.0\ref\FirstLibrary.dll
