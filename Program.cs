@@ -37,7 +37,7 @@ namespace Safari_Management
                         break;
 
                     case 1:
-                        RunClientsMenu();
+                        RunClientMenu();
                         break;
 
                     case 2:
@@ -67,7 +67,7 @@ namespace Safari_Management
             Animals animalManager = new Animals(); // Cria um objeto da classe Animals
 
             Console.WriteLine("\t\t\t\tWelcome to the animal registration system!");
-            Console.WriteLine(" #####                                   #     #                                                               \r\n#     #   ##   ######   ##   #####  #    ##   ##   ##   #    #   ##    ####  ###### #    # ###### #    # ##### \r\n#        #  #  #       #  #  #    # #    # # # #  #  #  ##   #  #  #  #    # #      ##  ## #      ##   #   #   \r\n #####  #    # #####  #    # #    # #    #  #  # #    # # #  # #    # #      #####  # ## # #####  # #  #   #   \r\n      # ###### #      ###### #####  #    #     # ###### #  # # ###### #  ### #      #    # #      #  # #   #   \r\n#     # #    # #      #    # #   #  #    #     # #    # #   ## #    # #    # #      #    # #      #   ##   #   \r\n #####  #    # #      #    # #    # #    #     # #    # #    # #    #  ####  ###### #    # ###### #    #   #  ");
+            Console.WriteLine("   #                                            #     #                                                               \r\n  # #   #    # # #    #   ##   #       ####     ##   ##   ##   #    #   ##    ####  ###### #    # ###### #    # ##### \r\n #   #  ##   # # ##  ##  #  #  #      #         # # # #  #  #  ##   #  #  #  #    # #      ##  ## #      ##   #   #   \r\n#     # # #  # # # ## # #    # #       ####     #  #  # #    # # #  # #    # #      #####  # ## # #####  # #  #   #   \r\n####### #  # # # #    # ###### #           #    #     # ###### #  # # ###### #  ### #      #    # #      #  # #   #   \r\n#     # #   ## # #    # #    # #      #    #    #     # #    # #   ## #    # #    # #      #    # #      #   ##   #   \r\n#     # #    # # #    # #    # ######  ####     #     # #    # #    # #    #  ####  ###### #    # ###### #    #   #   ");
             Console.WriteLine();
             while (true)
             {
@@ -121,7 +121,7 @@ namespace Safari_Management
                         break;
 
                     case 6:
-                        Console.WriteLine("Leaving the program.");
+                        Console.WriteLine("Returning to the main menu.");
                         break;
 
                     default:
@@ -137,22 +137,132 @@ namespace Safari_Management
             }
         }
 
-        static void RunClientsMenu()
+        static void RunClientMenu()
         {
 
+            Clients clientManager = new Clients();
+
             Console.WriteLine("\t\t\t\tWelcome to the Client registration system!");
-            Console.WriteLine(" #####                                   #     #                                                               \r\n#     #   ##   ######   ##   #####  #    ##   ##   ##   #    #   ##    ####  ###### #    # ###### #    # ##### \r\n#        #  #  #       #  #  #    # #    # # # #  #  #  ##   #  #  #  #    # #      ##  ## #      ##   #   #   \r\n #####  #    # #####  #    # #    # #    #  #  # #    # # #  # #    # #      #####  # ## # #####  # #  #   #   \r\n      # ###### #      ###### #####  #    #     # ###### #  # # ###### #  ### #      #    # #      #  # #   #   \r\n#     # #    # #      #    # #   #  #    #     # #    # #   ## #    # #    # #      #    # #      #   ##   #   \r\n #####  #    # #      #    # #    # #    #     # #    # #    # #    #  ####  ###### #    # ###### #    #   #  ");
+            Console.WriteLine(" #####                                         #     #                                                               \r\n#     # #      # ###### #    # #####  ####     ##   ##   ##   #    #   ##    ####  ###### #    # ###### #    # ##### \r\n#       #      # #      ##   #   #   #         # # # #  #  #  ##   #  #  #  #    # #      ##  ## #      ##   #   #   \r\n#       #      # #####  # #  #   #    ####     #  #  # #    # # #  # #    # #      #####  # ## # #####  # #  #   #   \r\n#       #      # #      #  # #   #        #    #     # ###### #  # # ###### #  ### #      #    # #      #  # #   #   \r\n#     # #      # #      #   ##   #   #    #    #     # #    # #   ## #    # #    # #      #    # #      #   ##   #   \r\n #####  ###### # ###### #    #   #    ####     #     # #    # #    # #    #  ####  ###### #    # ###### #    #   #   ");
             Console.WriteLine();
+
+            while (true)
+            {
+                Console.WriteLine("Select one option: ");
+                Console.WriteLine("0. Load database client.");
+                Console.WriteLine("1. Regiter a new client.");
+                Console.WriteLine("2. Count clients in list.");
+                Console.WriteLine("3. Update client.");
+                Console.WriteLine("4. Remove client.");
+                Console.WriteLine("5. Search client.");
+                Console.WriteLine("6. Return to the main menu.");
+                Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
+                int choice = int.Parse(Console.ReadLine());
+
+
+                switch (choice)
+                {
+
+                    case 0:
+                        clientManager.ExibitionList();
+                        break;
+
+
+                    case 1:
+                        Console.WriteLine("How many clients do you want to register?");
+                        //Chama o método registerClient, junto com o clientManager, onde aloca os atributos da classe inseridos pelo utilizador
+                        clientManager.Register();
+                        Console.WriteLine($"Total registered clients: {clientManager.TotalRegisteredClients}");
+                        clientManager.SaveClientsToFile(Clients.listClients, "ClientList.bin");
+                        break;
+
+                    case 2:
+                        clientManager.RunList();
+                        Console.WriteLine($"{clientManager.Count()}");
+                        break;
+
+                    case 3:
+
+                        clientManager.Update();
+                        clientManager.SaveClientsToFile(Clients.listClients, "ClientList.bin");
+                        break;
+
+                    case 4:
+                        clientManager.Delete();
+                        break;
+
+                    case 5:
+                        clientManager.RunList();
+                        clientManager.Search();
+                        break;
+
+                    case 6:
+                        Console.WriteLine("Returning to the main menu.");
+                        break;
+
+                    default:
+                        Console.WriteLine("Returning to the main menu.");
+                        break;
+                }
+
+                if (choice == 6)
+                {
+                    break;
+                }
+
+            }
+
         }
 
         static void RunPaymentMenu()
         {
+
+            Clients clientManager = new Clients();
             Payment payManager = new Payment();
-            payManager.CreateInvoice();
+
             Console.WriteLine("\t\t\t\tWelcome to the Payment registration system!");
-            Console.WriteLine(" #####                                   #     #                                                               \r\n#     #   ##   ######   ##   #####  #    ##   ##   ##   #    #   ##    ####  ###### #    # ###### #    # ##### \r\n#        #  #  #       #  #  #    # #    # # # #  #  #  ##   #  #  #  #    # #      ##  ## #      ##   #   #   \r\n #####  #    # #####  #    # #    # #    #  #  # #    # # #  # #    # #      #####  # ## # #####  # #  #   #   \r\n      # ###### #      ###### #####  #    #     # ###### #  # # ###### #  ### #      #    # #      #  # #   #   \r\n#     # #    # #      #    # #   #  #    #     # #    # #   ## #    # #    # #      #    # #      #   ##   #   \r\n #####  #    # #      #    # #    # #    #     # #    # #    # #    #  ####  ###### #    # ###### #    #   #  ");
+            Console.WriteLine("######                                             #     #                                                               \r\n#     #   ##   #   # #    # ###### #    # #####    ##   ##   ##   #    #   ##    ####  ###### #    # ###### #    # ##### \r\n#     #  #  #   # #  ##  ## #      ##   #   #      # # # #  #  #  ##   #  #  #  #    # #      ##  ## #      ##   #   #   \r\n######  #    #   #   # ## # #####  # #  #   #      #  #  # #    # # #  # #    # #      #####  # ## # #####  # #  #   #   \r\n#       ######   #   #    # #      #  # #   #      #     # ###### #  # # ###### #  ### #      #    # #      #  # #   #   \r\n#       #    #   #   #    # #      #   ##   #      #     # #    # #   ## #    # #    # #      #    # #      #   ##   #   \r\n#       #    #   #   #    # ###### #    #   #      #     # #    # #    # #    #  ####  ###### #    # ###### #    #   #   ");
             Console.WriteLine();
 
+            while (true)
+            {
+
+                Console.WriteLine("Select one option: ");
+                Console.WriteLine("0. Buy a ticket.");
+                Console.WriteLine("1. Search invoice.");
+                Console.WriteLine("2. Return to the main menu.");
+                Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
+                int choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
+                {
+
+                    case 0:
+                        clientManager.RunList();
+                        payManager.CreateInvoice();
+                        clientManager.AddPayment(payManager);
+                        break;
+
+                    case 1:
+                        clientManager.RunList();
+                        clientManager.DisplayClientInvoices();
+                        break;
+
+                    case 2:
+                        Console.WriteLine("Returning to the main menu.");
+                        break;
+
+                    default:
+                        Console.WriteLine("Returning to the main menu.");
+                        break;
+                }
+
+                if (choice == 2)
+                {
+                    break;
+                }
+
+            }
         }
     }
 }
