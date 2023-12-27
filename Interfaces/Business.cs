@@ -1,4 +1,6 @@
-﻿namespace Safari_Management.Interfaces;
+﻿using Safari_Management.Entities;
+
+namespace Safari_Management.Interfaces;
 
 interface Business
 {
